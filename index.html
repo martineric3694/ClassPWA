@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Web Apps</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <img src="image/icon-72x72.png" alt="logo">
+        <h1>Progressive Web Apps</h1>
+        <p>Welcome to our website</p>
+        <img src="https://via.placeholder.com/300" alt="Example Image">
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <aside>
+            <h2>Side Menu</h2>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <article>
+                <h2>Article Title 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec est id nulla eleifend venenatis.
+                </p>
+            </article>
+            <article>
+                <h2>Article Title 2</h2>
+                <p>Phasellus finibus leo et metus vehicula, ac vehicula justo facilisis. Donec tristique elit ut dui
+                    convallis luctus.</p>
+            </article>
+
+            <section>
+                <h2>Data Table</h2>
+                <label for="status-filter">Filter by Column:</label>
+                <select id="status-filter" onchange="filterTableByStatus(this.value)">
+                    <option value="all">All</option>
+                    <option value="false">Not Completed</option>
+                    <option value="true">Completed</option>
+                </select>
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Total</th>
+                            <th>User ID</th>
+                            <th>Total Product</th>
+                            <th>Total Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4" style="text-align: center;">No Data Found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Contact Form</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Responsive Static Page. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('serviceworker.js')
+                .then(() => {
+                    console.log('Service Worker registered');
+                })
+                .catch(err => {
+                    console.log('Service Worker failed', err);
+                })
+        });
+    }
+</script>
+<script src="js/function.js"></script>
+
+</html>
